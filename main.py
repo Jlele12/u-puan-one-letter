@@ -9,12 +9,14 @@ the work, so the letter carries it whole.
 
 from pathlib import Path
 
+# The whole entry: one letter, the initial of "slogged".
 LETTER = "S"
 
 
 def main() -> None:
     out = Path("/output")
     out.mkdir(parents=True, exist_ok=True)
+    # The gate wants UTF-8 text of exactly 1 character, not only white space.
     (out / "entry.txt").write_text(LETTER, encoding="utf-8")
 
 
